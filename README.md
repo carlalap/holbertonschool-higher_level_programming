@@ -5,7 +5,7 @@
 
 ## Content 
  
-- <a href="https://github.com/carlalap/holbertonschool-higher_level_programming/tree/master/python-hello_world"> Python - Hello, World</a>
-- <a href="https://docs.python.org/3/tutorial/appetite.html"> Needs Update</a>
-- <a href="https://pypi.org/project/pycodestyle/"> Needs update</a>
+1. <a href="https://github.com/carlalap/holbertonschool-higher_level_programming/tree/master/python-hello_world"> Python - Hello, World</a>
+2. <a href="https://https://github.com/carlalap/holbertonschool-higher_level_programming/tree/master/python-if_else_loops_functions"> python-if_else_loops_functions</a>
+3. <a href="https://github.com/carlalap/holbertonschool-higher_level_programming/tree/master/python-import_modules"> python-import_modules</a>
 
