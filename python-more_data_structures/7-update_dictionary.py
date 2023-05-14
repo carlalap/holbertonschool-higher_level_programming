@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-def update_dictionary(my_dict, key, value):
-
-    if key in my_dict:
-        del my_dict[key]
-        my_dict.update({key: value})
+def update_dictionary(a_dictionary, key, value):
+    if key not in a_dictionary:
+        a_dictionary[key] = value
     else:
-        my_dict.update({key: value})
-
-    return my_dict
+        for a in a_dictionary:
+            if a == key:
+                a_dictionary[a] = value
+    return a_dictionary
