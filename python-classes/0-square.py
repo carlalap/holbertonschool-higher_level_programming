@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""This file holds the Square class """
+"""Write an empty class Square that defines a square """
 
 
 class Square:
+    """Class that represents a square"""
     pass
