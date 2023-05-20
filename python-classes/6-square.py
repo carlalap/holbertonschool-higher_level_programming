@@ -11,7 +11,6 @@ class Square:
         self.size = size
         self.position = position
 
-
     @property
     def size(self):
         """Retrieve the current size of the square """
