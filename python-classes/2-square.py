@@ -3,6 +3,8 @@
 
 
 class Square:
+    """Define Class Square"
+    """
     def __init__(self, size=0):
         """ Conditional atrribute for the Class that represents a square
         """
