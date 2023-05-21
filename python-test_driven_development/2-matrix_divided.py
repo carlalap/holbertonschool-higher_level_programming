@@ -3,6 +3,15 @@
 # define a matrix division function
 
 def matrix_divided(matrix, div):
+    """''def matrix_divided(matrix, div):'' divide each
+    elelemt of the matrix is divided by div and
+    return a new matrix with the results with a 2
+    precision numbers. If div not is a number raise
+    TypeError or ZeroDivisionError if div is 0:
+    If matrix not is a list of lists return TypeError.
+    If some sub-list aren't a list return TypeError.
+    If some element of some sub-list aren't integer
+    or float number return TypeError."""
 
     if not all(isinstance(row, list) for row in matrix):
         # check if matrix is list of lists of integers or floats
