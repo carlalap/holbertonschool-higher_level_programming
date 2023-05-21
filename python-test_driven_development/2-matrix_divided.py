@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-# define a matrix division function
+"""Defines a matrix division function."""
+
 
 def matrix_divided(matrix, div):
     """''def matrix_divided(matrix, div):'' divide each
@@ -14,11 +15,11 @@ def matrix_divided(matrix, div):
     or float number return TypeError."""
 
     if not all(isinstance(row, list) for row in matrix):
-        # check if matrix is list of lists of integers or floats
+        """check if matrix is list of lists of integers or floats"""
         raise TypeError("matrix must be a matrix (list of lists)"
                         "of integers/floats")
 
-    # check if all rows have the same size
+    """ check if all rows have the same size """
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
@@ -31,10 +32,6 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     # Perform the division and round the results to 2 decimal places
-    new_matrix = []
-    # store the results of the division operation
-    for row in matrix:
-        new_row = [round(element / div, 2) for element in the row]
-        new_matrix.append(new_row)
 
-    return new_matrix
+    # store the results of the division operation
+    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
