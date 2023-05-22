@@ -12,21 +12,21 @@ Usage
 ::
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
-    >>> say_my_name("Camila", "Rodblo")
-    My name is Camila Rodblo
+    >>> say_my_name("Leonel", "Messi")
+    My name is Leonel Messi
 
 ::
 
-    >>> say_my_name("Marco Aurelio", "Decimo Segundo")
-    My name is Maco Aurelio Decimo Segundo
+    >>> say_my_name("James", "Mason")
+    My name is James Mason
 
 The parameter ```last_name``` is optional. If no last name is provided,
 an empty string is printed instead.
 
 ::
 
-    >>> say_my_name(i"Camilo")
-    	My name is Walter
+    >>> say_my_name("Walter")
+    My name is Walter
 
 Invalid Names
 =============
@@ -35,3 +35,33 @@ The parameters ``first_name`` and ``last_name``` must be strings. Otherwise,
 a TypeError is raised.
 
 ::
+
+    >>> say_my_name(6, "James")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("LeBron", ["Cavs", "Lakers", "Heat"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+::
+
+    >>> say_my_name({"LeBron": 6, "James": 23}, 7.7)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+At least one name must be provided.
+
+::
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
