@@ -60,7 +60,7 @@ class Rectangle:
             for y in range(self.width):
                 result += str(self.print_symbol)
             result += "\n"
-        result = result[0:-1]
+        result = result[:-1]
         return (result)
 
     def __repr__(self):
@@ -83,7 +83,6 @@ class Rectangle:
             return (rect_1)
         elif rect_1.area() < rect_2.area():
             return (rect_2)
-        
 
     @classmethod
     def square(cls, size=0):
