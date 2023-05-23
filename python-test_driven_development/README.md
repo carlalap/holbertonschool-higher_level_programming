@@ -89,43 +89,9 @@ guillaume@ubuntu:~/$
 
   </div>
 
-  <div class="list-group">
-    <!-- Task URLs -->
-
-    <!-- Github information -->
-      <div class="list-group-item">
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>holbertonschool-higher_level_programming</code></li>
-            <li>Directory: <code>python-test_driven_development</code></li>
-            <li>File: <code>0-add_integer.py, tests/0-add_integer.txt</code></li>
-        </ul>
-      </div>
-
-</div>
-    <div data-role="task19432" data-position="3" id="task-num-1">
-      <div class="panel panel-default task-card " id="task-19432">
-  <span id="user_id" data-id="6138"></span>
-
-  <div class="panel-heading panel-heading-actions">
     <h3 class="panel-title">
       1. Divide a matrix
     </h3>
-
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
-
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>Write a function that divides all elements of a matrix.</p>
 
 <ul>
 <li>Prototype: <code>def matrix_divided(matrix, div):</code></li>
@@ -214,21 +180,6 @@ guillaume@ubuntu:~/$
       3. Print square
     </h3>
 
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
-
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>Write a function that prints a square with the character <code>#</code>.</p>
-
 <ul>
 <li>Prototype: <code>def print_square(size):</code></li>
 <li><code>size</code> is the size length of the square</li>
@@ -291,21 +242,6 @@ guillaume@ubuntu:~/$
     <h3 class="panel-title">
       4. Text indentation
     </h3>
-
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
-
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>Write a function that prints a text with 2 new lines after each of these characters: <code>.</code>, <code>?</code> and <code>:</code></p>
 
 <ul>
 <li>Prototype: <code>def text_indentation(text):</code></li>
@@ -370,21 +306,6 @@ guillaume@ubuntu:~/$
     <h3 class="panel-title">
       5. Max integer - Unittest
     </h3>
-
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
-
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>Since the beginning you have been creating &ldquo;Interactive tests&rdquo;. For this exercise, you will add Unittests.</p>
 
 <p>In this task, you will write unittests for the function <code>def max_integer(list=[]):</code>.</p>
 
