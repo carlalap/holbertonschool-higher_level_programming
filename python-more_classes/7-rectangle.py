@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-"""6. How many instances"""
+"""7. Change representation"""
 
 
 class Rectangle:
     """Write a class rectangle"""
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Atributes of the rectangle"""
@@ -55,7 +58,7 @@ class Rectangle:
             return (result)
         for x in range(self.height):
             for y in range(self.width):
-                result += "#"
+                result += str(self.print_symbol)
             result += "\n"
         result = result[0:-1]
         return (result)
