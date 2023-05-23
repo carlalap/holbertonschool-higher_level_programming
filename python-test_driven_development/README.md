@@ -50,6 +50,73 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - Returns an integer: the addition of a and b
 - You are not allowed to import any module
 
+<p>Write a function that adds 2 integers.</p>
+
+<ul>
+<li>Prototype: <code>def add_integer(a, b=98):</code></li>
+<li><code>a</code> and <code>b</code> must be integers or floats, otherwise raise a <code>TypeError</code> exception with the message <code>a must be an integer</code> or <code>b must be an integer</code></li>
+<li><code>a</code> and <code>b</code> must be first casted to integers if they are float</li>
+<li>Returns an integer: the addition of <code>a</code> and <code>b</code></li>
+<li>You are not allowed to import any module</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 0-main.py
+#!/usr/bin/python3
+add_integer = __import__(&#39;0-add_integer&#39;).add_integer
+
+print(add_integer(1, 2))
+print(add_integer(100, -2))
+print(add_integer(2))
+print(add_integer(100.3, -2))
+try:
+    print(add_integer(4, &quot;School&quot;))
+except Exception as e:
+    print(e)
+try:
+    print(add_integer(None))
+except Exception as e:
+    print(e)
+
+guillaume@ubuntu:~/$ ./0-main.py
+3
+98
+100
+98
+b must be an integer
+a must be an integer
+guillaume@ubuntu:~/$ python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
+9 passed and 0 failed.
+Test passed.
+guillaume@ubuntu:~/$ python3 -c &#39;print(__import__(&quot;0-add_integer&quot;).__doc__)&#39; | wc -l
+5
+guillaume@ubuntu:~/$ python3 -c &#39;print(__import__(&quot;0-add_integer&quot;).add_integer.__doc__)&#39; | wc -l
+3
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+    <!-- Task URLs -->
+
+    <!-- Github information -->
+      <div class="list-group-item">
+        <p><strong>Repo:</strong></p>
+        <ul>
+          <li>GitHub repository: <code>holbertonschool-higher_level_programming</code></li>
+            <li>Directory: <code>python-test_driven_development</code></li>
+            <li>File: <code>0-add_integer.py, tests/0-add_integer.txt</code></li>
+        </ul>
+      </div>
+
+    <!-- Self-paced manual review -->
+  </div>
+
+  <!-- Panel footer - Controls -->
+  <div class="panel-footer">
+      <div class="align-items-center d-flex justify-content-between">
+
+
 1. Divide a matrix
 <br> Write a function that divides all elements of a matrix.
 - Prototype: def matrix_divided(matrix, div):
