@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""6. How many instances"""
+"""8. Compare rectangles"""
 
 
 class Rectangle:
     """Write a class rectangle"""
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Atributes of the rectangle"""
@@ -57,7 +58,7 @@ class Rectangle:
             return (result)
         for x in range(self.height):
             for y in range(self.width):
-                result += "#"
+                result += str(self.print_symbol)
             result += "\n"
         result = result[0:-1]
         return (result)
@@ -70,3 +71,14 @@ class Rectangle:
         """prints a message when an instance is deleted """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Static method returns the biggest rectangle based on the area"""
+        if isinstance(rect_1, Rectangle) is False:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if isinstance(rect_2, Rectangle) is False:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return (rect_1)
+        return (rect_2)
