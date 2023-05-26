@@ -12,55 +12,18 @@
 <li><a href="/rltoken/2tqD3FclxPgvlTC70KQApw" title="9.12. Cloning lists" target="_blank">9.12. Cloning lists</a> </li>
 <li><a href="/rltoken/OXG9J_vBEWtpxuX2hnF-dQ" title="Python tuples: immutable but potentially changing" target="_blank">Python tuples: immutable but potentially changing</a> </li>
 
+## Tasks
 
-  <h2 class="gap">Tasks</h2>
+0. Who am I?
+What function would you use to print the type of an object?
+- Write the name of the function in the file, without ().
 
-    <div data-role="task19462" data-position="1" id="task-num-0">
-      <div class="panel panel-default task-card " id="task-19462">
-  <span id="user_id" data-id="6138"></span>
+1. Where are you?
+How do you get the variable identifier (which is the memory address in the CPython implementation)?
+- Write the name of the function in the file, without ().
 
-  <div class="panel-heading panel-heading-actions">
-    <h3 class="panel-title">
-      0. Who am I?
-    </h3>
+2. Right count
+<br>In the following code, do a and b point to the same object? Answer with Yes or No.
 
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
-
-    <!-- Progress vs Score -->
-      <div class="task_progress_score_bar" data-task-id="19462" data-correction-id="485929">
-        <div class="task_progress_bar">
-          <div class="task_score_bar">
-          </div>
-        </div>
-        <div class="task_progress_score_text">
-          Score: <span class="task_score_value">0%</span> (<span class="task_progress_value">Checks completed: 0%</span>)
-        </div>
-      </div>
-
-    <!-- Task Body -->
-    <p>What function would you use to print the type of an object?</p>
-
-<p>Write the name of the function in the file, without <code>()</code>.</p>
-
-  </div>
-
-  <div class="list-group">
-    <!-- Task URLs -->
-
-    <!-- Github information -->
-      <div class="list-group-item">
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>holbertonschool-higher_level_programming</code></li>
-            <li>Directory: <code>python-everything_is_object</code></li>
-            <li>File: <code>0-answer.txt</code></li>
-        </ul>
-      </div>>
+>>> a = 89
+>>> b = 100
