@@ -11,7 +11,6 @@
 <li><a href="/rltoken/xyElfrO9KowD4p5UqhQG8A" title="Mutation" target="_blank">Mutation</a> (<em>Only this chapter</em>)</li>
 <li><a href="/rltoken/2tqD3FclxPgvlTC70KQApw" title="9.12. Cloning lists" target="_blank">9.12. Cloning lists</a> </li>
 <li><a href="/rltoken/OXG9J_vBEWtpxuX2hnF-dQ" title="Python tuples: immutable but potentially changing" target="_blank">Python tuples: immutable but potentially changing</a> </li>
-</ul
 
 
   <h2 class="gap">Tasks</h2>
