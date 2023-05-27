@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-""" Module: 1-my_list
-    class Mylist inherit from list"""
-
-
 class Mylist(list):
     """
     MyList class inherits from list.
@@ -25,5 +21,4 @@ class Mylist(list):
         This method sorts the list in ascending order using the sorted function
         and prints the sorted list.
         """
-        sorted_list = sorted(self)
-        print(sorted_list)
+        print(sorted(self))
