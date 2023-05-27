@@ -7,4 +7,4 @@ def is_kind_of_class(obj, a_class):
     Function that returns True if the object is an instance
     of, or if the object is an instance
     """
-    return isintance(obj, a_class)
+    return isinstance(obj, a_class)
