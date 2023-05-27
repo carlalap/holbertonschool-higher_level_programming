@@ -4,12 +4,10 @@ module 1. My list
 """
 
 
-class Mylist(list):
-    """
-    class Mylist  inherits from list.
-
-    This class provides an additional method, print_sorted,
-    that prints the list in ascending order.
-    """
+class MyList(list):
     def print_sorted(self):
-        print(sorted(self))
+        """
+        Prints the list, but sorted in ascending order.
+        """
+        sorted_list = sorted(self)
+        print(sorted_list)
