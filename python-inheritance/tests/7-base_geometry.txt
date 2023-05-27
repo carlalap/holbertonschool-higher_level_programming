@@ -12,11 +12,6 @@ Import function
 Test
 
 
->>> bg.integer_validator("Hola", -5)
-Traceback (most recent call last):
-ValueError: Hola must be greater than 0
-
-
 >>> bg.integer_validator("4", -5)
 Traceback (most recent call last):
 ValueError: 4 must be greater than 0
