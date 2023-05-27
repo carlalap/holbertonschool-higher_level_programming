@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-"""
-module 1. My list
-"""
-
-
 class MyList(list):
+    """
+    Class Mylist inherits list
+    """
+
     def print_sorted(self):
         """
-        Prints the list, but sorted in ascending order.
+        prints the list, but sorted
         """
-        sorted_list = sorted(self)
-        print(sorted_list)
+        print(sorted(self))
