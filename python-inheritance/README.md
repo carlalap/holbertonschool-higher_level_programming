@@ -11,9 +11,6 @@
 <li><a href="/rltoken/fojEQ8bllfZecx-ZKKurTw" title="Learn to Program 10 : Inheritance Magic Methods" target="_blank">Learn to Program 10 : Inheritance Magic Methods</a> </li>
 </ul>
 
-<h2>Learning Objectives</h2>
-
-<p>At the end of this project, you are expected to be able to <a href="/rltoken/qtTNU4FKGaIHTtnDLLrVYQ" title="explain to anyone" target="_blank">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
 
 <h3>General</h3>
 
@@ -66,35 +63,17 @@
 <ul>
 <li>Do not use the words <code>import</code> or <code>from</code> inside your comments, the checker will think you are trying to import some modules</li>
 </ul>
+  
 
-  </div>
-</div>
+<h2>Tasks</h2>
 
-<h2 class="gap">Tasks</h2>
-
-    <div data-role="task19498" data-position="1" id="task-num-0">
-      <div class="panel panel-default task-card " id="task-19498">
-  <span id="user_id" data-id="6138"></span>
-
-  <div class="panel-heading panel-heading-actions">
-    <h3 class="panel-title">
-      0. Lookup
-    </h3>
-
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
-
+   
+0. Lookup
+   
     <!-- Progress vs Score -->
 
     <!-- Task Body -->
-    <p>Write a function that returns the list of available attributes and methods of an object:</p>
+<p>Write a function that returns the list of available attributes and methods of an object:</p>
 
 <ul>
 <li>Prototype: <code>def lookup(obj):</code></li>
