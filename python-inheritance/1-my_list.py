@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 class Mylist(list):
-    """
+    """ Module: 1-my_list
     class Mylist inherit from list
     """
 
