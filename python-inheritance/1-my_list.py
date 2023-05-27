@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+module 1. My list
+"""
+
 class Mylist(list):
     """
     MyList class inherits from list.
