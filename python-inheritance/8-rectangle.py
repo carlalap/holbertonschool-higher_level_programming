@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Class rectangle. """
+"""Module '8. Rectangle'
+   Class rectangle. 
+"""
 BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
 
 
@@ -8,6 +10,7 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """Declaring attributes.
+        i
 
         Args:
             width (int): The width of the new Rectangle.
