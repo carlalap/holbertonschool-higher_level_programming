@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" Module 9.
-    Full rectangle. """
+""" Module 9. Full rectangle. """
+
+
 BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
 
 
