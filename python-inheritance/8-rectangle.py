@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Write a class Rectangle inherits from (7-base_geometry.py)
 """ Module 8.
     Rectangle Class rectangle. """
 
