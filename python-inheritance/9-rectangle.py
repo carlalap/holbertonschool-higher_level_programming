@@ -6,7 +6,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 class BaseGeometry:
     """ BaseGeomety Class """
     def area(self):
-        raise NotImplementedError("Subclass must implement area() method")
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         if not isinstance(value, int):
@@ -25,8 +25,8 @@ class Rectangle(BaseGeometry):
             width (int): The width of the new Rectangle.
             height (int): The height of the new Rectangle.
         """
-        self.integer_validator = width
-        self.integer_validator = height
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
 
