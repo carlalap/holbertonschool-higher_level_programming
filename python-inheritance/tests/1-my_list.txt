@@ -98,8 +98,7 @@ It works when appending a list
 
     >>> my_list.print_sorted
     <bound method MyList.print_sorted of [1, 4, 2, 3, 5]>
-
-TypeError print_sorted when method is given 1 argument
+    TypeError print_sorted when method is given 1 argument
 
 ::
 
@@ -119,9 +118,20 @@ TypeError print_sorted when method is given 1 argument
     ['Edward', 'Oliver', 'Jhon', 'Doe', 'Mr Puffles']
 
 ::
-
-    >>> my_list = MyList()
+    >>> a = []
+    >>> my_list = MyList(a)
     >>> my_list.print_sorted()
     []
+    >>>
 
+::
 
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.append(5)
+	>>> my_list.append(1)
+	>>> my_list.append(-1)
+	>>> my_list.append(51)
+	>>> my_list.append(-5)
+	>>> my_list.print_sorted()
+	[-5, -1, 1, 5, 51]
