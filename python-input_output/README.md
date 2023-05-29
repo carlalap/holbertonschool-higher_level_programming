@@ -1,7 +1,6 @@
-<title>Project: Python - Input/Output </title>
+# Project: Python - Input/Output
 
-
-    <h2>Resources</h2>
+## Resources
 
 <p><strong>Read or watch</strong>:</p>
 
@@ -72,21 +71,13 @@
     <h3 class="panel-title">
       0. Read file
     </h3>
-
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
+    
   </div>
 
 <div class="panel-body">
     <span id="user_id" data-id="6138"></span>
 
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>Write a function that reads a text file (<code>UTF8</code>) and prints it to stdout:</p>
+<p>Write a function that reads a text file (<code>UTF8</code>) and prints it to stdout:</p>
 
 <ul>
 <li>Prototype: <code>def read_file(filename=&quot;&quot;):</code></li>
@@ -117,3 +108,38 @@ guillaume@ubuntu:~/$
 <p><strong>No test cases needed</strong></p>
 
   </div>
+
+<div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      1. Write to a file
+    </h3>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="6138"></span>
+
+    
+  <p>Write a function that writes a string to a text file (<code>UTF8</code>) and returns the number of characters written:</p>
+
+<ul>
+<li>Prototype: <code>def write_file(filename=&quot;&quot;, text=&quot;&quot;):</code></li>
+<li>You must use the <code>with</code> statement</li>
+<li>You don&rsquo;t need to manage file permission exceptions.</li>
+<li>Your function should create the file if doesn&rsquo;t exist.</li>
+<li>Your function should overwrite the content of the file if it already exists.</li>
+<li>You are not allowed to import any module</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 1-main.py
+#!/usr/bin/python3
+write_file = __import__(&#39;1-write_file&#39;).write_file
+
+nb_characters = write_file(&quot;my_first_file.txt&quot;, &quot;This School is so cool!\n&quot;)
+print(nb_characters)
+
+guillaume@ubuntu:~/$ ./1-main.py
+24
+guillaume@ubuntu:~/$ cat my_first_file.txt
+This School is so cool!
+guillaume@ubuntu:~/$ 
+</code></pre>
