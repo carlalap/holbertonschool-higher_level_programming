@@ -143,3 +143,117 @@ guillaume@ubuntu:~/$ cat my_first_file.txt
 This School is so cool!
 guillaume@ubuntu:~/$ 
 </code></pre>
+
+<div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      2. Append to a file
+    </h3>
+
+  <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+  </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="6138"></span>
+
+  <!-- Progress vs Score -->
+
+  <!-- Task Body -->
+  <p>Write a function that appends a string at the end of a text file (<code>UTF8</code>) and returns the number of characters added:</p>
+
+<ul>
+<li>Prototype: <code>def append_write(filename=&quot;&quot;, text=&quot;&quot;):</code></li>
+<li>If the file doesn&rsquo;t exist, it should be created</li>
+<li>You must use the <code>with</code> statement</li>
+<li>You don&rsquo;t need to manage <code>file permission</code> or <code>file doesn&#39;t exist</code> exceptions.</li>
+<li>You are not allowed to import any module</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 2-main.py
+#!/usr/bin/python3
+append_write = __import__(&#39;2-append_write&#39;).append_write
+
+nb_characters_added = append_write(&quot;file_append.txt&quot;, &quot;This School is so cool!\n&quot;)
+print(nb_characters_added)
+
+guillaume@ubuntu:~/$ cat file_append.txt
+cat: file_append.txt: No such file or directory
+guillaume@ubuntu:~/$ ./2-main.py
+24
+guillaume@ubuntu:~/$ cat file_append.txt
+This School is so cool!
+guillaume@ubuntu:~/$ ./2-main.py
+24
+guillaume@ubuntu:~/$ cat file_append.txt
+This School is so cool!
+This School is so cool!
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+ <div class="panel-heading panel-heading-actions">
+    <h3 class="panel-title">
+      3. To JSON string
+    </h3>
+
+    <div>
+        <span class="label label-info">
+          mandatory
+        </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <span id="user_id" data-id="6138"></span>
+
+    <!-- Progress vs Score -->
+
+    <!-- Task Body -->
+  <p>Write a function that returns the JSON representation of an object (string):</p>
+
+<ul>
+<li>Prototype: <code>def to_json_string(my_obj):</code></li>
+<li>You don&rsquo;t need to manage exceptions if the object can&rsquo;t be serialized.</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 3-main.py
+#!/usr/bin/python3
+to_json_string = __import__(&#39;3-to_json_string&#39;).to_json_string
+
+my_list = [1, 2, 3]
+s_my_list = to_json_string(my_list)
+print(s_my_list)
+print(type(s_my_list))
+
+my_dict = { 
+    &#39;id&#39;: 12,
+    &#39;name&#39;: &quot;John&quot;,
+    &#39;places&#39;: [ &quot;San Francisco&quot;, &quot;Tokyo&quot; ],
+    &#39;is_active&#39;: True,
+    &#39;info&#39;: {
+        &#39;age&#39;: 36,
+        &#39;average&#39;: 3.14
+    }
+}
+s_my_dict = to_json_string(my_dict)
+print(s_my_dict)
+print(type(s_my_dict))
+
+try:
+    my_set = { 132, 3 }
+    s_my_set = to_json_string(my_set)
+    print(s_my_set)
+    print(type(s_my_set))
+except Exception as e:
+    print(&quot;[{}] {}&quot;.format(e.__class__.__name__, e))
+
+guillaume@ubuntu:~/$ ./3-main.py
+[1, 2, 3]
+&lt;class &#39;str&#39;&gt;
+{&quot;id&quot;: 12, &quot;is_active&quot;: true, &quot;name&quot;: &quot;John&quot;, &quot;info&quot;: {&quot;average&quot;: 3.14, &quot;age&quot;: 36}, &quot;places&quot;: [&quot;San Francisco&quot;, &quot;Tokyo&quot;]}
+&lt;class &#39;str&#39;&gt;
+[TypeError] {3, 132} is not JSON serializable
+guillaume@ubuntu:~/$ 
+</code></pre>
