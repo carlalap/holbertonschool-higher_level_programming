@@ -110,31 +110,20 @@
 <li>We strongly encourage you to work together on test cases so that you don&rsquo;t miss any edge case</li>
 </ul>
 
-<h2 class="gap">Tasks</h2>
+ <h2 class="gap">Tasks</h2>
 
-    <div data-role="task20537" data-position="1" id="task-num-0">
-      <div class="panel panel-default task-card " id="task-20537">
+   <h3 class="panel-title">
+     0. If it&#39;s not tested it doesn&#39;t work
+  </h3>
+
+ 
+  <div class="panel-body">
   <span id="user_id" data-id="6138"></span>
 
-  <div class="panel-heading panel-heading-actions">
-    <h3 class="panel-title">
-      0. If it&#39;s not tested it doesn&#39;t work
-    </h3>
+   <!-- Progress vs Score -->
 
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
-  </div>
-
-  <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
-
-    <!-- Progress vs Score -->
-
-    <!-- Task Body -->
-    <p>All your files, classes and methods must be unit tested and be PEP 8 validated. </p>
+   <!-- Task Body -->
+   <p>All your files, classes and methods must be unit tested and be PEP 8 validated. </p>
 
 <pre><code>guillaume@ubuntu:~/$ python3 -m unittest discover tests
 ...................................................................................
@@ -149,24 +138,18 @@ guillaume@ubuntu:~/$
 
 
  <div class="panel-heading panel-heading-actions">
-    <h3 class="panel-title">
+   <h3 class="panel-title">
       1. Base class
     </h3>
-
-    <div>
-        <span class="label label-info">
-          mandatory
-        </span>
-    </div>
   </div>
 
   <div class="panel-body">
-    <span id="user_id" data-id="6138"></span>
+   <span id="user_id" data-id="6138"></span>
 
-    <!-- Progress vs Score -->
+   <!-- Progress vs Score -->
 
-    <!-- Task Body -->
-    <p>Write the first class <code>Base</code>:</p>
+   <!-- Task Body -->
+   <p>Write the first class <code>Base</code>:</p>
 
 <p>Create a folder named <code>models</code> with an empty file <code>__init__.py</code> inside - with this file, the folder will become a Python package</p>
 
@@ -221,5 +204,200 @@ guillaume@ubuntu:~/$
 
   </div>
 
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      2. First Rectangle
+    </h3>
 
+   </div>
 
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Write the class <code>Rectangle</code> that inherits from <code>Base</code>:</p>
+
+<ul>
+<li>In the file <code>models/rectangle.py</code></li>
+<li>Class <code>Rectangle</code> inherits from <code>Base</code></li>
+<li>Private instance attributes, each with its own public getter and setter:
+
+<ul>
+<li><code>__width</code> -&gt; <code>width</code></li>
+<li><code>__height</code> -&gt; <code>height</code></li>
+<li><code>__x</code> -&gt; <code>x</code></li>
+<li><code>__y</code> -&gt; <code>y</code></li>
+</ul></li>
+<li>Class constructor: <code>def __init__(self, width, height, x=0, y=0, id=None)</code>:
+
+<ul>
+<li>Call the super class with <code>id</code> - this super call with use the logic of the <code>__init__</code> of the <code>Base</code> class</li>
+<li>Assign each argument <code>width</code>, <code>height</code>, <code>x</code> and <code>y</code> to the right attribute</li>
+</ul></li>
+</ul>
+
+<p>Why private attributes with getter/setter? Why not directly public attribute?</p>
+
+<p>Because we want to protect attributes of our class. With a setter, you are able to validate what a developer is trying to assign to a variable. So after, in your class you can &ldquo;trust&rdquo; these attributes.</p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 1-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 1-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(10, 2)
+    print(r1.id)
+
+    r2 = Rectangle(2, 10)
+    print(r2.id)
+
+    r3 = Rectangle(10, 2, 0, 0, 12)
+    print(r3.id)
+
+guillaume@ubuntu:~/$ ./1-main.py
+1
+2
+12
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      3. Validate attributes
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+   <!-- Progress vs Score -->
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by adding validation of all setter methods and instantiation (<code>id</code> excluded):</p>
+
+<ul>
+<li>If the input is not an integer, raise the <code>TypeError</code> exception with the message: <code>&lt;name of the attribute&gt; must be an integer</code>. Example: <code>width must be an integer</code></li>
+<li>If <code>width</code> or <code>height</code> is under or equals 0, raise the <code>ValueError</code> exception with the message: <code>&lt;name of the attribute&gt; must be &gt; 0</code>. Example: <code>width must be &gt; 0</code></li>
+<li>If <code>x</code> or <code>y</code> is under 0, raise the <code>ValueError</code> exception with the message: <code>&lt;name of the attribute&gt; must be &gt;= 0</code>. Example: <code>x must be &gt;= 0</code></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 2-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 2-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    try:
+        Rectangle(10, &quot;2&quot;)
+    except Exception as e:
+        print(&quot;[{}] {}&quot;.format(e.__class__.__name__, e))
+
+    try:
+        r = Rectangle(10, 2)
+        r.width = -10
+    except Exception as e:
+        print(&quot;[{}] {}&quot;.format(e.__class__.__name__, e))
+
+    try:
+        r = Rectangle(10, 2)
+        r.x = {}
+    except Exception as e:
+        print(&quot;[{}] {}&quot;.format(e.__class__.__name__, e))
+
+    try:
+        Rectangle(10, 2, 3, -1)
+    except Exception as e:
+        print(&quot;[{}] {}&quot;.format(e.__class__.__name__, e))
+
+guillaume@ubuntu:~/$ ./2-main.py
+[TypeError] height must be an integer
+[ValueError] width must be &gt; 0
+[TypeError] x must be an integer
+[ValueError] y must be &gt;= 0
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      4. Area first
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by adding the public method <code>def area(self):</code> that returns the area value of the <code>Rectangle</code> instance.</p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 3-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 3-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(3, 2)
+    print(r1.area())
+
+    r2 = Rectangle(2, 10)
+    print(r2.area())
+
+    r3 = Rectangle(8, 7, 0, 0, 12)
+    print(r3.area())
+
+guillaume@ubuntu:~/$ ./3-main.py
+6
+20
+56
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      5. Display #0
+    </h3>
+
+   </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by adding the public method <code>def display(self):</code> that prints in stdout the <code>Rectangle</code> instance with the character <code>#</code> - you don&rsquo;t need to handle <code>x</code> and <code>y</code> here.</p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 4-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 4-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(4, 6)
+    r1.display()
+
+    print(&quot;---&quot;)
+
+    r1 = Rectangle(2, 2)
+    r1.display()
+
+guillaume@ubuntu:~/$ ./4-main.py
+####
+####
+####
+####
+####
+####
+---
+##
+##
+guillaume@ubuntu:~/$ 
+</code></pre>
