@@ -265,6 +265,8 @@ guillaume@ubuntu:~/$ ./1-main.py
 guillaume@ubuntu:~/$ 
 </code></pre>
 
+</div>
+
 <div class="panel-heading panel-heading-actions">
    <h3 class="panel-title">
       3. Validate attributes
@@ -401,3 +403,289 @@ guillaume@ubuntu:~/$ ./4-main.py
 ##
 guillaume@ubuntu:~/$ 
 </code></pre>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      6. __str__
+    </h3>
+
+   </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by overriding the <code>__str__</code> method so that it returns <code>[Rectangle] (&lt;id&gt;) &lt;x&gt;/&lt;y&gt; - &lt;width&gt;/&lt;height&gt;</code></p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 5-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 5-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(4, 6, 2, 1, 12)
+    print(r1)
+
+    r2 = Rectangle(5, 5, 1)
+    print(r2)
+
+guillaume@ubuntu:~/$ ./5-main.py
+[Rectangle] (12) 2/1 - 4/6
+[Rectangle] (1) 1/0 - 5/5
+guillaume@ubuntu:~/$ 
+</code></pre>
+</div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      7. Display #1
+    </h3>
+
+   </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by improving the public method <code>def display(self):</code> to print in stdout the <code>Rectangle</code> instance with the character <code>#</code> by taking care of <code>x</code> and <code>y</code></p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 6-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 6-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(2, 3, 2, 2)
+    r1.display()
+
+    print(&quot;---&quot;)
+
+    r2 = Rectangle(3, 2, 1, 0)
+    r2.display()
+
+guillaume@ubuntu:~/$ ./6-main.py | cat -e
+$
+$
+  ##$
+  ##$
+  ##$
+---$
+ ###$
+ ###$
+guillaume@ubuntu:~/$ 
+</code></pre>
+</div>
+
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      8. Update #0
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by adding the public method <code>def update(self, *args):</code> that assigns an argument to each attribute:</p>
+
+<ul>
+<li>1st argument should be the <code>id</code> attribute</li>
+<li>2nd argument should be the <code>width</code> attribute</li>
+<li>3rd argument should be the <code>height</code> attribute</li>
+<li>4th argument should be the <code>x</code> attribute</li>
+<li>5th argument should be the <code>y</code> attribute</li>
+</ul>
+
+<p>This type of argument is called a &ldquo;no-keyword argument&rdquo; - Argument order is super important.</p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 7-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; Doc &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(89)
+    print(r1)
+
+    r1.update(89, 2)
+    print(r1)
+
+    r1.update(89, 2, 3)
+    print(r1)
+
+    r1.update(89, 2, 3, 4)
+    print(r1)
+
+    r1.update(89, 2, 3, 4, 5)
+    print(r1)
+
+guillaume@ubuntu:~/$ ./7-main.py
+[Rectangle] (1) 10/10 - 10/10
+[Rectangle] (89) 10/10 - 10/10
+[Rectangle] (89) 10/10 - 2/10
+[Rectangle] (89) 10/10 - 2/3
+[Rectangle] (89) 4/10 - 2/3
+[Rectangle] (89) 4/5 - 2/3
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      9. Update #1
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by updating the public method <code>def update(self, *args):</code> by changing the prototype to <code>update(self, *args, **kwargs)</code> that assigns a key/value argument to attributes:</p>
+
+<ul>
+<li><code>**kwargs</code> can be thought of as a double pointer to a dictionary: key/value
+
+<ul>
+<li>As Python doesn&rsquo;t have pointers, <code>**kwargs</code> is not literally a double pointer &ndash; describing it as such is just a way of explaining its behavior in terms you&rsquo;re already familiar with</li>
+</ul></li>
+
+<li><code>**kwargs</code> must be skipped if <code>*args</code> exists and is not empty</li>
+<li>Each key in this dictionary represents an attribute to the instance</li>
+</ul>
+<p>This type of argument is called a &ldquo;key-worded argument&rdquo;. Argument order is not important.</p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 8-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 8-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(height=1)
+    print(r1)
+
+    r1.update(width=1, x=2)
+    print(r1)
+
+    r1.update(y=1, width=2, x=3, id=89)
+    print(r1)
+
+    r1.update(x=1, height=2, y=3, width=4)
+    print(r1)
+
+guillaume@ubuntu:~/$ ./8-main.py
+[Rectangle] (1) 10/10 - 10/10
+[Rectangle] (1) 10/10 - 10/1
+[Rectangle] (1) 2/10 - 1/1
+[Rectangle] (89) 3/1 - 2/1
+[Rectangle] (89) 1/3 - 4/2
+guillaume@ubuntu:~/$ 
+
+</code></pre>
+
+ </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      10. And now, the Square!
+    </h3>
+
+   </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Write the class <code>Square</code> that inherits from <code>Rectangle</code>:</p>
+
+<ul>
+<li>In the file <code>models/square.py</code></li>
+<li>Class <code>Square</code> inherits from <code>Rectangle</code></li>
+<li>Class constructor: <code>def __init__(self, size, x=0, y=0, id=None):</code>:
+
+<ul>
+<li>Call the super class with <code>id</code>, <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> - this super call will use the logic of the <code>__init__</code> of the <code>Rectangle</code> class. The <code>width</code> and <code>height</code> must be assigned to the value of <code>size</code></li>
+<li>You must not create new attributes for this class, use all attributes of <code>Rectangle</code> - As reminder: a Square is a Rectangle with the same width and height</li>
+<li>All <code>width</code>, <code>height</code>, <code>x</code> and <code>y</code> validation must inherit from <code>Rectangle</code> - same behavior in case of wrong data</li>
+</ul></li>
+<li>The overloading <code>__str__</code> method should return <code>[Square] (&lt;id&gt;) &lt;x&gt;/&lt;y&gt; - &lt;size&gt;</code> - in our case, <code>width</code> or <code>height</code></li>
+</ul>
+
+<p>As you know, a Square is a special Rectangle, so it makes sense this class Square inherits from Rectangle. Now you have a Square class who has the same attributes and same methods.</p>
+
+<pre><code>guillaume@ubuntu:~/$ cat 9-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 9-main &quot;&quot;&quot;
+from models.square import Square
+
+if __name__ == &quot;__main__&quot;:
+
+    s1 = Square(5)
+    print(s1)
+    print(s1.area())
+    s1.display()
+
+    print(&quot;---&quot;)
+
+    s2 = Square(2, 2)
+    print(s2)
+    print(s2.area())
+    s2.display()
+
+    print(&quot;---&quot;)
+
+    s3 = Square(3, 1, 3)
+    print(s3)
+    print(s3.area())
+    s3.display()
+
+guillaume@ubuntu:~/$ ./9-main.py
+[Square] (1) 0/0 - 5
+25
+#####
+#####
+#####
+#####
+#####
+---
+[Square] (2) 2/0 - 2
+4
+  ##
+  ##
+---
+[Square] (3) 1/3 - 3
+9
+
+
+
+ ###
+ ###
+ ###
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
