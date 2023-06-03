@@ -28,6 +28,7 @@ class Square(Rectangle):
         return st
 
     def update(self, *args, **kwargs):
+        """Method that assigns an argument to each attribute"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
