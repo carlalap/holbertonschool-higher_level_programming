@@ -7,7 +7,7 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """class Square that inherits from Rectangle"""
 
-    def __init__(self, size=None, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         """Constructor"""
         super().__init__(size, size, x, y, id)
 
@@ -29,15 +29,16 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Method that assigns an argument to each attribute"""
-        if args:
-            if len(args) >= 1:
-                self.id = args[0]
-            if len(args) >= 2:
-                self.size = args[1]
-            if len(args) >= 3:
-                self.x = args[2]
-            if len(args) >= 4:
-                self.y = args[3]
+        if len(args):
+            for i, j in enumerate(args):
+                if i == 0:
+                    self.id = j
+                elif i == 1:
+                    self.size = j
+                elif i == 2:
+                    self.x = j
+                elif i == 3:
+                    self.y = j
             else:
                 if "id" in kwargs:
                     self.id = kwargs["id"]
