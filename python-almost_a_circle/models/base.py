@@ -37,7 +37,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """returns the list of the JSON string 
+        """returns the list of the JSON string
         representation json_string:"""
         if not json_string:
             return []
@@ -48,10 +48,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """that returns an instance 
+        """that returns an instance
         with all attributes already set:"""
         if cls.__name__ == 'Rectangle':
-            dummy = cls(1,1)
+            dummy = cls(1, 1)
         elif cls.__name__ == 'Square':
             dummy = cls(1)
         else:
