@@ -44,37 +44,3 @@ class Base:
             return json.loads(json_string)
         except ValueError:
             return []
-
-    @classmethod
-    def create(cls, **dictionary):
-        """that returns an instance
-        with all attributes already set:"""
-        if cls.__name__ == 'Rectangle':
-            dummy = cls(1, 1)
-        elif cls.__name__ == 'Square':
-            dummy = cls(1)
-        else:
-            return None
-        dummy.update(**dictionary)
-        return dummy
-
-    def update(self, *args, **kwargs):
-        """setting the attributes based
-        on the key-value pairs of kwargs."""
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-    @classmethod
-    def load_from_file(cls):
-        filename = cls.__name__ + ".json"
-        try:
-            with open(filename, 'r') as file:
-                json_string = file.read()
-            list_dicts = cls.from_json_string(json_string)
-            return [cls.create(**dictionary) for dictionary in list_dicts]
-        except FileNotFoundError:
-            return []
-
-    def update(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
