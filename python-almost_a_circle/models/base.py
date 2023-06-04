@@ -3,7 +3,8 @@
 
 import json
 
-class Base:
+
+iclass Base:
     """ this class is the -base- of all
     other classes in this project. """
     __nb_objects = 0
@@ -17,7 +18,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ JSON string """
+        """Dictionary to JSON string"""
         if not list_dictionaries:
             return "[]"
         else:
