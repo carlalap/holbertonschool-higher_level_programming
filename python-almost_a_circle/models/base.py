@@ -67,9 +67,5 @@ class Base:
                 json_string = file.read()
             list_dicts = cls.from_json_string(json_string)
             return [cls.create(**dictionary) for dictionary in list_dicts]
-        except FileNotFoundError:
+        except IOError:
             return []
-
-    def update(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
