@@ -111,10 +111,11 @@ class Rectangle(Base):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        """Dictionary Square """
+        """Dictionary Rectangle """
         return {
             "id": self.id,
-            "size": self.size,
+            "width": self.width,
+            "height": self.height,
             "x": self.x,
             "y": self.y
-        }
+        } 
