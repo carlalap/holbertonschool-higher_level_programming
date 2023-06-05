@@ -6,8 +6,6 @@ import os
 import sys
 import unittest
 from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
 
 
 class TestBase_instantiation(unittest.TestCase):
@@ -34,6 +32,12 @@ class TestBase_instantiation(unittest.TestCase):
             os.remove("Base.json")
         except FileNotFoundError:
             pass
+
+    def test_print(self):
+        """ test print method """
+        print("Hello, world!")
+        self.assertEqual(self.capture_output.getvalue(), "Hello, world!\n")
+        print("Hello, world!", file=sys.__stdout__)
 
     def test_no_arg(self):
         b1 = Base()
