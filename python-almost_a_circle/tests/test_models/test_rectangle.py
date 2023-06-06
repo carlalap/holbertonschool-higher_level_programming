@@ -11,8 +11,9 @@ class TestRectangle(unittest.TestCase):
     """Type class unittest instance for rectangle"""
 
     def test_ids(self):
-        """tests ids"""
+        """tests ids - width, height, x, y"""
         Base._Base__nb_objects = 0
+
         r1 = Rectangle(10, 2)
         r2 = Rectangle(2, 10)
         r3 = Rectangle(10, 2, 0, 0, 12)
@@ -21,12 +22,30 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.id, 12)
         r3.id = "a"
         self.assertEqual(r3.id, "a")
+
         # rectangle with string x
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, "string", 4, 5)
+
         # rectangle with string y
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, "string", 5)
+
+        # rectangle with negative height
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, -2, 3, 4, 5)
+
+        # rectangle with negative x
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, -3, 4, 5)
+
+        # rectangle with zero width
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2, 3, 4, 5)
+
+        # rectangle with zero height
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 0, 3, 4, 5)
 
     def test_attr_errors(self):
         """tests errors"""
