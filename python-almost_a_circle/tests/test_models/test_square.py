@@ -32,6 +32,21 @@ class TestSquare(unittest.TestCase):
         r3.id = "a"
         self.assertEqual(r3.id, "a")
 
+        # Test if x is an string
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+        # Test if y is an string
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+
+        # Test with negative x
+        with self.assertRaises(ValueError):
+            Square(1, -2)
+
+        # Test with zero size
+        with self.assertRaises(ValueError):
+            Square(0)
+
     def test_attr_errors(self):
         """tests errors"""
         Base._Base__nb_objects = 0
