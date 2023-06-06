@@ -21,6 +21,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.id, 12)
         r3.id = "a"
         self.assertEqual(r3.id, "a")
+        # rectangle with string x
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, "string", 4, 5)
+        # rectangle with string y
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, 3, "string", 5)
 
     def test_attr_errors(self):
         """tests errors"""
