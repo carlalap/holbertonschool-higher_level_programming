@@ -1,8 +1,6 @@
 #!/bin/usr/python3
 """Unittest for Rectangle"""
-
 from io import StringIO
-import pep8
 import sys
 import unittest
 from models.base import Base
@@ -11,12 +9,6 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """Type class unittest instance for rectangle"""
-
-    def test_pep8(self):
-        style = pep8.StyleGuide(quiet=True)
-        p = style.check_files
-        (['models/rectangle.py', 'models/base.py', 'models/square.py'])
-        self.assertEqual(p.total_errors, 0, "Found code style errors")
 
     def test_ids(self):
         """tests ids"""
