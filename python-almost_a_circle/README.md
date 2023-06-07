@@ -689,3 +689,581 @@ guillaume@ubuntu:~/$
 </code></pre>
 
   </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      11. Square size
+    </h3>
+
+   
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+ 	<!-- Task Body -->
+   <p>Update the class <code>Square</code> by adding the public getter and setter <code>size</code></p>
+
+<ul>
+<li>The setter should assign (in this order) the <code>width</code> and the <code>height</code> - with the same value</li>
+<li>The setter should have the same value validation as the <code>Rectangle</code> for <code>width</code> and <code>height</code> - No need to change the exception error message (It should be the one from <code>width</code>)</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 10-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 10-main &quot;&quot;&quot;
+from models.square import Square
+
+if __name__ == &quot;__main__&quot;:
+
+    s1 = Square(5)
+    print(s1)
+    print(s1.size)
+    s1.size = 10
+    print(s1)
+
+    try:
+        s1.size = &quot;9&quot;
+    except Exception as e:
+        print(&quot;[{}] {}&quot;.format(e.__class__.__name__, e))
+
+guillaume@ubuntu:~/$ ./10-main.py
+[Square] (1) 0/0 - 5
+5
+[Square] (1) 0/0 - 10
+[TypeError] width must be an integer
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+   <!-- Task URLs -->
+
+   <!-- Github information -->
+   <div class="list-group-item">
+   <p><strong>Repo:</strong></p>
+   <ul>
+   <li>GitHub repository: <code>holbertonschool-higher_level_programming</code></li>
+   <li>Directory: <code>python-almost_a_circle</code></li>
+   <li>File: <code>models/square.py</code></li>
+   </ul>
+   </div>
+
+   <!-- Self-paced manual review -->
+  </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      12. Square update
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   
+<span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Square</code> by adding the public method <code>def update(self, *args, **kwargs)</code> that assigns attributes:</p>
+
+<ul>
+<li><code>*args</code> is the list of arguments - no-keyworded arguments
+
+<ul>
+<li>1st argument should be the <code>id</code> attribute</li>
+<li>2nd argument should be the <code>size</code> attribute</li>
+<li>3rd argument should be the <code>x</code> attribute</li>
+<li>4th argument should be the <code>y</code> attribute</li>
+</ul></li>
+<li><code>**kwargs</code> can be thought of as a double pointer to a dictionary: key/value (keyworded arguments)</li>
+<li><code>**kwargs</code> must be skipped if *args exists and is not empty</li>
+<li>Each key in this dictionary represents an attribute to the instance</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 11-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 11-main &quot;&quot;&quot;
+from models.square import Square
+
+if __name__ == &quot;__main__&quot;:
+
+    s1 = Square(5)
+    print(s1)
+
+    s1.update(10)
+    print(s1)
+
+    s1.update(1, 2)
+    print(s1)
+
+    s1.update(1, 2, 3)
+    print(s1)
+
+    s1.update(1, 2, 3, 4)
+    print(s1)
+
+    s1.update(x=12)
+    print(s1)
+
+    s1.update(size=7, y=1)
+    print(s1)
+
+    s1.update(size=7, id=89, y=1)
+    print(s1)
+
+guillaume@ubuntu:~/$ ./11-main.py
+[Square] (1) 0/0 - 5
+[Square] (10) 0/0 - 5
+[Square] (1) 0/0 - 2
+[Square] (1) 3/0 - 2
+[Square] (1) 3/4 - 2
+[Square] (1) 12/4 - 2
+[Square] (1) 12/1 - 7
+[Square] (89) 12/1 - 7
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+ 
+<!-- Task URLs -->
+
+ <!-- Github information -->
+  <div class="list-group-item">
+  <p><strong>Repo:</strong></p>
+ <ul>
+ <li>GitHub repository: <code>holbertonschool-higher_level_programming</code></li>
+ <li>Directory: <code>python-almost_a_circle</code></li>
+ <li>File: <code>models/square.py</code></li>
+ </ul>
+ </div>
+
+ <!-- Self-paced manual review -->
+  </div>
+
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      13. Rectangle instance to dictionary representation
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Rectangle</code> by adding the public method <code>def to_dictionary(self):</code> that returns the dictionary representation of a <code>Rectangle</code>:</p>
+
+<p>This dictionary must contain:</p>
+
+<ul>
+<li><code>id</code></li>
+<li><code>width</code></li>
+<li><code>height</code></li>
+<li><code>x</code></li>
+<li><code>y</code></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 12-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 12-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(10, 2, 1, 9)
+    print(r1)
+    r1_dictionary = r1.to_dictionary()
+    print(r1_dictionary)
+    print(type(r1_dictionary))
+
+    r2 = Rectangle(1, 1)
+    print(r2)
+    r2.update(**r1_dictionary)
+    print(r2)
+    print(r1 == r2)
+
+guillaume@ubuntu:~/$ ./12-main.py
+[Rectangle] (1) 1/9 - 10/2
+{&#39;x&#39;: 1, &#39;y&#39;: 9, &#39;id&#39;: 1, &#39;height&#39;: 2, &#39;width&#39;: 10}
+&lt;class &#39;dict&#39;&gt;
+[Rectangle] (2) 0/0 - 1/1
+[Rectangle] (1) 1/9 - 10/2
+False
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      14. Square instance to dictionary representation
+    </h3>
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Square</code> by adding the public method <code>def to_dictionary(self):</code> that returns the dictionary representation of a <code>Square</code>:</p>
+
+<p>This dictionary must contain:</p>
+
+<ul>
+<li><code>id</code></li>
+<li><code>size</code></li>
+<li><code>x</code></li>
+<li><code>y</code></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 13-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 13-main &quot;&quot;&quot;
+from models.square import Square
+
+if __name__ == &quot;__main__&quot;:
+
+    s1 = Square(10, 2, 1)
+    print(s1)
+    s1_dictionary = s1.to_dictionary()
+    print(s1_dictionary)
+    print(type(s1_dictionary))
+
+    s2 = Square(1, 1)
+    print(s2)
+    s2.update(**s1_dictionary)
+    print(s2)
+    print(s1 == s2)
+
+guillaume@ubuntu:~/$ ./13-main.py
+[Square] (1) 2/1 - 10
+{&#39;id&#39;: 1, &#39;x&#39;: 2, &#39;size&#39;: 10, &#39;y&#39;: 1}
+&lt;class &#39;dict&#39;&gt;
+[Square] (2) 1/0 - 1
+[Square] (1) 2/1 - 10
+False
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      15. Dictionary to JSON string
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+   <!-- Task Body -->
+   <p>JSON is one of the standard formats for sharing data representation.</p>
+
+<p>Update the class <code>Base</code> by adding the static method <code>def to_json_string(list_dictionaries):</code> that returns the JSON string representation of <code>list_dictionaries</code>:</p>
+
+<ul>
+<li><code>list_dictionaries</code> is a list of dictionaries</li>
+<li>If <code>list_dictionaries</code> is <code>None</code> or empty, return the string: <code>&quot;[]&quot;</code></li>
+<li>Otherwise, return the JSON string representation of <code>list_dictionaries</code></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 14-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 14-main &quot;&quot;&quot;
+from models.base import Base
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(10, 7, 2, 8)
+    dictionary = r1.to_dictionary()
+    json_dictionary = Base.to_json_string([dictionary])
+    print(dictionary)
+    print(type(dictionary))
+    print(json_dictionary)
+    print(type(json_dictionary))
+
+guillaume@ubuntu:~/$ ./14-main.py
+{&#39;x&#39;: 2, &#39;width&#39;: 10, &#39;id&#39;: 1, &#39;height&#39;: 7, &#39;y&#39;: 8}
+&lt;class &#39;dict&#39;&gt;
+[{&quot;x&quot;: 2, &quot;width&quot;: 10, &quot;id&quot;: 1, &quot;height&quot;: 7, &quot;y&quot;: 8}]
+&lt;class &#39;str&#39;&gt;
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      16. JSON string to file
+    </h3>
+
+   </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Base</code> by adding the class method <code>def save_to_file(cls, list_objs):</code> that writes the JSON string representation of <code>list_objs</code> to a file:</p>
+
+<ul>
+<li><code>list_objs</code> is a list of instances who inherits of <code>Base</code> - example: list of <code>Rectangle</code> or list of <code>Square</code> instances</li>
+<li>If <code>list_objs</code> is <code>None</code>, save an empty list</li>
+<li>The filename must be: <code>&lt;Class name&gt;.json</code> - example: <code>Rectangle.json</code></li>
+<li>You must use the static method <code>to_json_string</code> (created before)</li>
+<li>You must overwrite the file if it already exists</li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 15-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 15-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(10, 7, 2, 8)
+    r2 = Rectangle(2, 4)
+    Rectangle.save_to_file([r1, r2])
+
+    with open(&quot;Rectangle.json&quot;, &quot;r&quot;) as file:
+        print(file.read())
+
+guillaume@ubuntu:~/$ ./15-main.py
+[{&quot;y&quot;: 8, &quot;x&quot;: 2, &quot;id&quot;: 1, &quot;width&quot;: 10, &quot;height&quot;: 7}, {&quot;y&quot;: 0, &quot;x&quot;: 0, &quot;id&quot;: 2, &quot;width&quot;: 2, &quot;height&quot;: 4}]
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+   <!-- Task URLs -->
+
+   <!-- Github information -->
+   <div class="list-group-item">
+   <p><strong>Repo:</strong></p>
+   <ul>
+   <li>GitHub repository: <code>holbertonschool-higher_level_programming</code></li>
+   <li>Directory: <code>python-almost_a_circle</code></li>
+   <li>File: <code>models/base.py</code></li>
+   </ul>
+   </div>
+
+   <!-- Self-paced manual review -->
+   </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      17. JSON string to dictionary
+    </h3>
+
+   <div>
+   
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Base</code> by adding the static method <code>def from_json_string(json_string):</code> that returns the list of the JSON string representation <code>json_string</code>:</p>
+
+<ul>
+<li><code>json_string</code> is a string representing a list of dictionaries</li>
+<li>If <code>json_string</code> is <code>None</code> or empty, return an empty list</li>
+<li>Otherwise, return the list represented by <code>json_string</code></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 16-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 16-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    list_input = [
+        {&#39;id&#39;: 89, &#39;width&#39;: 10, &#39;height&#39;: 4}, 
+        {&#39;id&#39;: 7, &#39;width&#39;: 1, &#39;height&#39;: 7}
+    ]
+    json_list_input = Rectangle.to_json_string(list_input)
+    list_output = Rectangle.from_json_string(json_list_input)
+    print(&quot;[{}] {}&quot;.format(type(list_input), list_input))
+    print(&quot;[{}] {}&quot;.format(type(json_list_input), json_list_input))
+    print(&quot;[{}] {}&quot;.format(type(list_output), list_output))
+
+guillaume@ubuntu:~/$ ./16-main.py
+[&lt;class &#39;list&#39;&gt;] [{&#39;height&#39;: 4, &#39;width&#39;: 10, &#39;id&#39;: 89}, {&#39;height&#39;: 7, &#39;width&#39;: 1, &#39;id&#39;: 7}]
+[&lt;class &#39;str&#39;&gt;] [{&quot;height&quot;: 4, &quot;width&quot;: 10, &quot;id&quot;: 89}, {&quot;height&quot;: 7, &quot;width&quot;: 1, &quot;id&quot;: 7}]
+[&lt;class &#39;list&#39;&gt;] [{&#39;height&#39;: 4, &#39;width&#39;: 10, &#39;id&#39;: 89}, {&#39;height&#39;: 7, &#39;width&#39;: 1, &#39;id&#39;: 7}]
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+ <div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      18. Dictionary to Instance
+    </h3>
+
+  </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Base</code> by adding the class method <code>def create(cls, **dictionary):</code> that returns an instance with all attributes already set:</p>
+
+<ul>
+<li><code>**dictionary</code> can be thought of as a double pointer to a dictionary</li>
+<li>To use the <code>update</code> method to assign all attributes, you must create a &ldquo;dummy&rdquo; instance before: 
+
+<ul>
+<li>Create a <code>Rectangle</code> or <code>Square</code> instance with &ldquo;dummy&rdquo; mandatory attributes (width, height, size, etc.)</li>
+<li>Call <code>update</code> instance method to this &ldquo;dummy&rdquo; instance to apply your real values</li>
+</ul></li>
+<li>You must use the method <code>def update(self, *args, **kwargs)</code></li>
+<li><code>**dictionary</code> must be used as <code>**kwargs</code> of the method <code>update</code></li>
+<li>You are not allowed to use <code>eval</code></li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 17-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 17-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(3, 5, 1)
+    r1_dictionary = r1.to_dictionary()
+    r2 = Rectangle.create(**r1_dictionary)
+    print(r1)
+    print(r2)
+    print(r1 is r2)
+    print(r1 == r2)
+
+guillaume@ubuntu:~/$ ./17-main.py
+[Rectangle] (1) 1/0 - 3/5
+[Rectangle] (1) 1/0 - 3/5
+False
+False
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+<div class="panel-heading panel-heading-actions">
+   <h3 class="panel-title">
+      19. File to instances
+    </h3>
+
+   </div>
+
+  <div class="panel-body">
+   <span id="user_id" data-id="6138"></span>
+
+   <!-- Progress vs Score -->
+
+   <!-- Task Body -->
+   <p>Update the class <code>Base</code> by adding the class method <code>def load_from_file(cls):</code> that returns a list of instances:</p>
+
+<ul>
+<li>The filename must be: <code>&lt;Class name&gt;.json</code> - example: <code>Rectangle.json</code></li>
+<li>If the file doesn&rsquo;t exist, return an empty list</li>
+<li>Otherwise, return a list of instances - the type of these instances depends on <code>cls</code> (current class using this method)</li>
+<li>You must use the <code>from_json_string</code> and <code>create</code> methods (implemented previously) </li>
+</ul>
+
+<pre><code>guillaume@ubuntu:~/$ cat 18-main.py
+#!/usr/bin/python3
+&quot;&quot;&quot; 18-main &quot;&quot;&quot;
+from models.rectangle import Rectangle
+from models.square import Square
+
+if __name__ == &quot;__main__&quot;:
+
+    r1 = Rectangle(10, 7, 2, 8)
+    r2 = Rectangle(2, 4)
+    list_rectangles_input = [r1, r2]
+
+    Rectangle.save_to_file(list_rectangles_input)
+
+    list_rectangles_output = Rectangle.load_from_file()
+
+    for rect in list_rectangles_input:
+        print(&quot;[{}] {}&quot;.format(id(rect), rect))
+
+    print(&quot;---&quot;)
+
+    for rect in list_rectangles_output:
+        print(&quot;[{}] {}&quot;.format(id(rect), rect))
+
+    print(&quot;---&quot;)
+    print(&quot;---&quot;)
+
+    s1 = Square(5)
+    s2 = Square(7, 9, 1)
+    list_squares_input = [s1, s2]
+
+    Square.save_to_file(list_squares_input)
+
+    list_squares_output = Square.load_from_file()
+
+    for square in list_squares_input:
+        print(&quot;[{}] {}&quot;.format(id(square), square))
+
+    print(&quot;---&quot;)
+
+    for square in list_squares_output:
+        print(&quot;[{}] {}&quot;.format(id(square), square))
+
+guillaume@ubuntu:~/$ ./18-main.py
+[139785912033120] [Rectangle] (1) 2/8 - 10/7
+[139785912033176] [Rectangle] (2) 0/0 - 2/4
+---
+[139785911764752] [Rectangle] (1) 2/8 - 10/7
+[139785911764808] [Rectangle] (2) 0/0 - 2/4
+---
+---
+[139785912058040] [Square] (5) 0/0 - 5
+[139785912061848] [Square] (6) 9/1 - 7
+---
+[139785911764976] [Square] (5) 0/0 - 5
+[139785911765032] [Square] (6) 9/1 - 7
+guillaume@ubuntu:~/$ 
+</code></pre>
+
+  </div>
+
+  <div class="list-group">
+   <!-- Task URLs -->
+
+   <!-- Github information -->
+   <div class="list-group-item">
+   <p><strong>Repo:</strong></p>
+   <ul>
+   <li>GitHub repository: <code>holbertonschool-higher_level_programming</code></li>
+   <li>Directory: <code>python-almost_a_circle</code></li>
+   <li>File: <code>models/base.py</code></li>
+   </ul>
+   </div>
+
+   <!-- Self-paced manual review -->
+  </div>
+
