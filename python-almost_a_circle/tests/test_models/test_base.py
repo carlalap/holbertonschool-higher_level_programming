@@ -101,7 +101,11 @@ class TestBase(unittest.TestCase):
         # List Square empty
         Square.save_to_file([])
         with open("Square.json", "r") as f:
-            self.assertEqual("[]", f.read())
+            self.assertTrue(f.read() == "[]")
+
+    def test_save_to_file_more_than_one_arg(self):
+        with self.assertRaises(TypeError):
+            Square.save_to_file([], 1)
 
     def test_fromJson(self):
         """tests the fromjson"""
