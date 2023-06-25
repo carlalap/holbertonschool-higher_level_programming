@@ -1,3 +1,3 @@
--- that lists all databases of your MySQL server.
--- DDL Instrution
+-- lists all databases of your MySQL server.
+-- DDL Instruction
 SHOW DATABASES;
