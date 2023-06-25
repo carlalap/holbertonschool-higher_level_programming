@@ -151,7 +151,11 @@ id  name
 $
 </code></pre>
 
+![JOINS](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230625%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230625T043924Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4d53ae6ef7158a53e210dc092b55f9da2644d6bf1d99327e2789913efe8f1705)
+
+![sql_joins](images/sql_joins.png)
+
 </div>
 </div>
 
-![JOINS](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230625%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230625T043924Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4d53ae6ef7158a53e210dc092b55f9da2644d6bf1d99327e2789913efe8f1705)
+
