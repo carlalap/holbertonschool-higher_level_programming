@@ -23,12 +23,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    # Retrieve all State objects and sort by id
-    states = session.query(State).filter(State.name.contains('a'))
-
-    # Display the results
-    for state in states:
-        session.delete(instance)
-
+    for changes in session.query(State):
+        if "a" in changes.name:
+            session.delete(changes)
     session.commit()
-    session.close()
