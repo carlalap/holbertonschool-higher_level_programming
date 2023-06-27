@@ -23,11 +23,6 @@ if __name__ == "__main__":
 
     session = Session()
 
-    # Retrieve all State objects and sort by id
-    states = session.query(State).filter(State.name == argv[4]).first()
-
-    # Display the results
-    if states is None:
-        print("Not found")
-    else:
-        print(f"{}: {states.id}")
+    chg_name = session.query(State).get(2)
+    chg_name.name = "New Mexico"
+    session.commit()

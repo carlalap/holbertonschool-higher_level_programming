@@ -24,10 +24,11 @@ if __name__ == "__main__":
     session = Session()
 
     # Retrieve all State objects and sort by id
-    states = session.query(State).filter(State.name == argv[4]).first()
+    states = session.query(State).filter(State.name.contains('a'))
 
     # Display the results
-    if states is None:
-        print("Not found")
-    else:
-        print(f"{}: {states.id}")
+    for state in states:
+        session.delete(instance)
+
+    session.commit()
+    session.close()
