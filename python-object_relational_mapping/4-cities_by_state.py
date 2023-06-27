@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # fetch results from the database
     cursor = db.cursor()
     """ Execute the query to retrieve the records from db"""
-    cursor.execute("SELECT city.id, city.name, state.name FROM  cities \
+    cursor.execute("SELECT city.id, city.name, states.name FROM  cities \
                     JOIN states ON cities.state_id = states.id \
                     ORDER BY cities.id ASC")
     # fetches all the rows returned by the SQL
