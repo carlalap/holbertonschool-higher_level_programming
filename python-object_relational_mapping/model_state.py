@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script file that contains the class definition of a State
+Script that contains the class State
 and an instance Base = declarative_base(),
 works with MySQLAlchemy ORM.
 """
