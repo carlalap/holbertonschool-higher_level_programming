@@ -16,7 +16,7 @@ if __name__ == "__main__":
     from the database.
     """
 
-    
+
     # Create engine and bind session
     db_url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.\
              format(argv[1], argv[2], argv[3])
@@ -32,4 +32,4 @@ if __name__ == "__main__":
     if states is None:
         print("Not found")
     else:
-        print(f"{}: {states.id}")
+        print(f"{0}: {states.id}")
