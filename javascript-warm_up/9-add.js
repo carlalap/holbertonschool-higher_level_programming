@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// task 9 - Write a script that prints the addition of 2 integers
+// task 9 - script that prints the addition of 2 integers
 
 const add = (a, b) => {
   return a + b;
