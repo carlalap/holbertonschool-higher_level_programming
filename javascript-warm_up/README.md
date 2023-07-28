@@ -561,7 +561,7 @@ guillaume@ubuntu:~/$
 <li>You are not allowed to use <code>var</code></li>
 </ul>
 
-<p><a href="/rltoken/RJ9f5jTEwwzvgfbqijdiig" title="Tip" target="_blank">Tip</a> </p>
+<p><a href="http://51elliot.blogspot.com/2012/01/simple-intro-to-nodejs-module-scope.html" title="Tip" target="_blank">Tip</a> </p>
 
 <pre><code>guillaume@ubuntu:~/$ cat 13-main.js
 #!/usr/bin/node
