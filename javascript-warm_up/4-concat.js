@@ -9,4 +9,4 @@ const firstArg = process.argv[2];
 const scndArg = process.argv[3];
 
 // Print the two arguments in the specified format
-console.log(firstArg + ' is ' +  scndArg);
+console.log(firstArg + ' is ' + scndArg);
