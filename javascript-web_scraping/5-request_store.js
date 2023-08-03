@@ -1,27 +1,18 @@
 #!/usr/bin/node
 // Task-5. Script that gets the contents
 // of a webpage and stores it in a file.
+
+// Get the URL and file path from the command line arguments
+const URL = process.argv[2];
+const file = process.argv[3];
 const request = require('request');
 const fs = require('fs');
 
-// Get the URL and file path from the command line arguments
-const url = process.argv[2];
-const filePath = process.argv[3];
-
 // Make the GET request to the URL
-request.get(url, (error, response, body) => {
-  if (error) {
-    console.error('Error:', error);
-  } else if (response.statusCode !== 200) {
-    console.error('Error:', 'Failed to fetch data from the URL');
-  } else {
-    // Write the response to the file
-    fs.writeFile(filePath, body, err => {
-      if (err) {
-        console.error('Error writing to the file:', err);
-      } else {
-        console.log('Successfully stored the response in the file:', filePath);
-      }
+request.get(URL, (error, response, body) => {
+  if (!error) {
+    fs.writeFile(file, body, error => {
+      if (error) console.error(error);
     });
   }
 });
