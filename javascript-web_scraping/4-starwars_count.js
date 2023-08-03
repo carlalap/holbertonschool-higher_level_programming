@@ -1,6 +1,6 @@
 #!/usr/bin/node
 // Task-4. Script that prints the number of movies where
-// the character “Wedge Antilles” is present. 
+// the character “Wedge Antilles” is present.
 const request = require('request');
 
 // Get the movie ID from the command line arguments
