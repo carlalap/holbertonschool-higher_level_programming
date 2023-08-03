@@ -4,12 +4,6 @@
 const request = require('request');
 const fs = require('fs');
 
-// Check if the correct number of arguments is provided
-if (process.argv.length !== 4) {
-  console.log('Usage: node 5-request_store.js <URL> <file-path>');
-  process.exit(1);
-}
-
 // Get the URL and file path from the command line arguments
 const url = process.argv[2];
 const filePath = process.argv[3];

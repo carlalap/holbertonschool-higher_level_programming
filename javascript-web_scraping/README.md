@@ -7,10 +7,10 @@
 <p><strong>Read or watch</strong>:</p>
 
 <ul>
-<li><a href="/rltoken/MiTgYMkQEYW7Ydfr2Enb-A" title="Working with JSON data" target="_blank">Working with JSON data</a> </li>
-<li><a href="/rltoken/FaAMZnG2vwWwzlkrYrhC0A" title="The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco" target="_blank">The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco</a> </li>
-<li><a href="/rltoken/ZOiv4Q-sjWN87QlfMxg2PQ" title="request module" target="_blank">request module</a> </li>
-<li><a href="/rltoken/ULF1RX7OyNexRK1q7qpcwA" title="Modern JS" target="_blank">Modern JS</a> </li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" title="Working with JSON data" target="_blank">Working with JSON data</a> </li>
+<li><a href="https://medium.com/@vietkieutie/the-workflow-of-accessing-the-attributes-of-a-simply-created-json-object-82a5b33e2319" title="The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco" target="_blank">The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco</a> </li>
+<li><a href="https://github.com/request/request" title="request module" target="_blank">request module</a> </li>
+<li><a href="https://github.com/mbeaudru/modern-js-cheatsheet" title="Modern JS" target="_blank">Modern JS</a> </li>
 </ul>
 
 <h2>Learning Objectives</h2>
@@ -36,7 +36,7 @@
 <li>All your files should end with a new line</li>
 <li>The first line of all your files should be exactly <code>#!/usr/bin/node</code></li>
 <li>A <code>README.md</code> file, at the root of the folder of the project, is mandatory</li>
-<li>Your code should be <code>semistandard</code> compliant. <a href="/rltoken/Z50ZPNHxGgFadRcaHCXWLQ" title="Rules of Standard" target="_blank">Rules of Standard</a> + <a href="/rltoken/ZDy8VNGPo5AIV8I4YAJ7nA" title="semicolons on top" target="_blank">semicolons on top</a>. Also as reference: <a href="/rltoken/VC05wFk369ONcZZR8uLtjw" title="AirBnB style" target="_blank">AirBnB style</a></li>
+<li>Your code should be <code>semistandard</code> compliant. <a href="https://standardjs.com/rules.html" title="Rules of Standard" target="_blank">Rules of Standard</a> + <a href="https://github.com/standard/semistandard" title="semicolons on top" target="_blank">semicolons on top</a>. Also as reference: <a href="https://github.com/airbnb/javascript" title="AirBnB style" target="_blank">AirBnB style</a></li>
 <li>All your files must be executable</li>
 <li>The length of your files will be tested using <code>wc</code></li>
 <li>You are not allowed to use <code>var</code></li>
@@ -52,14 +52,14 @@ $ sudo apt-get install -y nodejs
 
 <h3>Install semi-standard</h3>
 
-<p><a href="/rltoken/ZDy8VNGPo5AIV8I4YAJ7nA" title="Documentation" target="_blank">Documentation</a></p>
+<p><a href="https://github.com/standard/semistandard" title="Documentation" target="_blank">Documentation</a></p>
 
 <pre><code>$ sudo npm install semistandard --global
 </code></pre>
 
 <h3>Install <code>request</code> module and use it</h3>
 
-<p><a href="/rltoken/ZOiv4Q-sjWN87QlfMxg2PQ" title="Documentation" target="_blank">Documentation</a></p>
+<p><a href="https://github.com/request/request" title="Documentation" target="_blank">Documentation</a></p>
 
 <pre><code>$ sudo npm install request --global
 $ export NODE_PATH=/usr/lib/node_modules
@@ -74,7 +74,8 @@ $ export NODE_PATH=/usr/lib/node_modules
 
     <div data-role="task19641" data-position="1" id="task-num-0">
       <div class="panel panel-default task-card " id="task-19641">
-  <span id="user_id" data-id="6138"></span>
+
+<span id="user_id" data-id="6138"></span>
 
   <div class="panel-heading panel-heading-actions">
    <h3 class="panel-title">
@@ -295,4 +296,3 @@ guillaume@ubuntu:~/$
 </code></pre>
 
   </div>
-
