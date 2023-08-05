@@ -1,4 +1,4 @@
-<title>Project: JavaScript - Web jQuery </title>
+# Project: JavaScript - Web jQuery
 
 <div class="panel panel-default" id="project-description">
   <div class="panel-body">
